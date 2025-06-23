@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: greeks-package
+Version: 0.1.0
+Summary: Compute first-, second-, and third-order option Greeks.
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.23
+Requires-Dist: pandas>=1.5
+Requires-Dist: yfinance>=0.2
+Requires-Dist: py_vollib>=1.0
+Requires-Dist: scipy>=1.10
+
+# greeks-package
+
+Utilities to download option-chain data from Yahoo Finance and compute first-, second-, and third-order Greeks (Delta, Gamma, Vanna, Volga, Ultima, etc.) using the Black-Scholes framework.
+
+```python
+import greeks_package as gp
+
+# pull a filtered option chain
+chain = gp.download_options("AAPL", opt_type="c")
+
+# compute all greeks for each row
+full = chain.join(chain.apply(gp.greeks, axis=1, ticker="AAPL"))
+print(full.head())
+```
+
+Built with NumPy, Pandas, SciPy, yfinance, and py_vollib. 

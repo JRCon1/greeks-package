@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greeks-package"
+version = "0.1.0"
+description = "Compute first-, second-, and third-order option Greeks."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "yfinance>=0.2",
+    "py_vollib>=1.0",
+    "scipy>=1.10",
+] 
