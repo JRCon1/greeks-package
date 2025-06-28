@@ -1,0 +1,5 @@
+numpy>=1.23
+pandas>=1.5
+yfinance>=0.2
+plotly>=5.19
+scipy>=1.10
