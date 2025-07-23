@@ -1,0 +1,2 @@
+[console_scripts]
+greeks-examples = greeks_package.examples:run_all_examples
